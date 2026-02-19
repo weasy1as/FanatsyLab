@@ -33,7 +33,7 @@ export default async function TeamPage({
   console.log(team);
 
   // Get players from data.elements
-  const players = data.elements.filter((p: any) => p.team_code === 3);
+  const players = data.elements.filter((p: any) => p.team_code === code);
   console.log(players[0]);
 
   //if (!team) return <div>Team not found</div>;
@@ -51,19 +51,21 @@ export default async function TeamPage({
         {players.map((p: any) => (
           <div
             key={p.id}
-            className="bg-neutral-900 border border-neutral-800 rounded-xl p-4 hover:border-purple-500 transition"
+            className="flex justify-between items-center px-9 bg-neutral-900 border border-neutral-800 rounded-xl p-4 hover:border-purple-500 transition"
           >
-            <PlayerImage src={getPlayerImg(p.photo)} alt={p.web_name} />
-            <h3 className="mt-3 font-semibold">{p.web_name}</h3>
-            <p className="text-sm text-purple-400 font-medium">
-              {positions[p.element_type]} {/* Show position */}
-            </p>
-
-            <p className="text-sm text-neutral-400">£{p.now_cost / 10}m</p>
-
-            <p className="text-sm text-neutral-400">Points: {p.total_points}</p>
-
-            <p className="text-sm text-neutral-400">Form: {p.form}</p>
+            <div className="flex flex-col items-center">
+              <PlayerImage src={getPlayerImg(p.photo)} alt={p.web_name} />
+              <h3 className="mt-3 font-semibold">{p.web_name}</h3>
+            </div>
+            <div>
+              {" "}
+              <p className="text-sm text-purple-400 font-medium">
+                {positions[p.element_type]} {/* Show position */}
+              </p>
+              <p className="text-sm ">£{p.now_cost / 10}m</p>
+              <p className="text-sm ">Points: {p.total_points}</p>
+              <p className="text-sm ">Form: {p.form}</p>
+            </div>
           </div>
         ))}
       </div>

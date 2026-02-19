@@ -13,8 +13,8 @@ type PlayerImageProps = {
 export default function PlayerImage({
   src,
   alt,
-  width = 60,
-  height = 70,
+  width = 80,
+  height = 90,
 }: PlayerImageProps) {
   const [imgError, setImgError] = useState(false);
 
@@ -22,7 +22,7 @@ export default function PlayerImage({
     // Show React Icon as fallback
     return (
       <div
-        className="flex items-center justify-center w-[60px] h-[70px] bg-neutral-800 rounded"
+        className="flex items-center justify-center w-[80px] h-[90px] bg-neutral-800 rounded"
         style={{ width, height }}
       >
         <FaUserAlt className="text-gray-400 text-2xl" />
