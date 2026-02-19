@@ -3,56 +3,92 @@ import Image from "next/image";
 
 import heroPlayers from "@/public/Hero.png";
 import logoFantasy from "@/public/Fantasylogo.svg";
-import { Navbar, NavBody } from "@/components/ui/resizable-navbar";
 import LandingNavBar from "@/components/LandingNavBar";
 
 export default function LandingPage() {
   return (
-    <main className="flex flex-col min-h-screen bg-gray-50">
-      {/* Hero Section */}
+    <main className="flex flex-col min-h-screen bg-gradient-to-b from-slate-900 via-neutral-900 to-black text-white overflow-x-hidden">
       <LandingNavBar />
-      <section className="flex mt-20 gap-4 p-4 ">
-        <Image
-          src={heroPlayers}
-          alt="Players Hero"
-          className="object-cover flex-1 "
-        />
-        <div className=" flex flex-col items-center max-w-200 text-black px-4">
+
+      {/* HERO */}
+      <section className="relative flex flex-col lg:flex-row items-center justify-between mt-20 px-6 lg:px-20 gap-12">
+        {/* Image */}
+        <div className="relative flex-1 rounded-3xl overflow-hidden shadow-2xl">
+          <Image
+            src={heroPlayers}
+            alt="Fantasy football players"
+            className="object-cover w-full h-96 lg:h-[520px]"
+            priority
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </div>
+
+        {/* Text */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-xl">
           <Image
             src={logoFantasy}
-            alt="Fantasy Lab Logo"
-            width={250}
-            height={80}
-            className="mb-6 flex-1"
+            alt="Fantasy Lab"
+            width={280}
+            height={90}
+            className="mb-8"
           />
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Smarter Fantasy Football Insights
+
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            <span className="block bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Fantasy Football Analytics
+            </span>
+            <span className="block text-neutral-300 text-2xl md:text-3xl mt-3">
+              Powered by AI Insights
+            </span>
           </h1>
-          <p className="text-lg md:text-2xl mb-6">
-            Compare players, view stats, and get AI-powered insights
+
+          <p className="text-neutral-300 text-base md:text-lg mb-8 max-w-md">
+            Compare players, analyze stats, and make smarter decisions with
+            advanced AI-powered fantasy football insights.
           </p>
+
+          <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
+            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+              Explore Players
+            </button>
+
+            <button className="px-6 py-3 rounded-xl border border-indigo-600 text-indigo-200 bg-black/30 hover:bg-black/40 transition">
+              Compare Players
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* Placeholder for Trending Players */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
+      {/* TRENDING PLAYERS */}
+      <section className="py-20 px-6 lg:px-20 max-w-7xl mx-auto w-full">
         <h2 className="text-3xl font-semibold mb-8">Trending Players</h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {/* Player cards go here */}
+          {/* Example card style */}
+          <div className="bg-neutral-900/50 backdrop-blur-sm p-5 rounded-2xl ring-1 ring-neutral-800 hover:ring-indigo-500 transition-shadow shadow-md">
+            <div className="h-36 bg-gradient-to-b from-neutral-800 to-neutral-700 rounded-xl mb-4" />
+            <h3 className="font-semibold mb-1 text-neutral-100">Player Name</h3>
+            <p className="text-neutral-400 text-sm">Club • Position</p>
+          </div>
         </div>
       </section>
 
-      {/* Placeholder for Upcoming Fixtures */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
+      {/* FIXTURES */}
+      <section className="py-20 px-6 lg:px-20 max-w-7xl mx-auto w-full">
         <h2 className="text-3xl font-semibold mb-8">Upcoming Fixtures</h2>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {/* Fixture cards go here */}
+          <div className="bg-neutral-900/50 backdrop-blur-sm p-5 rounded-2xl ring-1 ring-neutral-800 hover:ring-indigo-500 transition-shadow shadow-md">
+            <div className="h-24 bg-gradient-to-b from-neutral-800 to-neutral-700 rounded-xl mb-4" />
+            <p className="text-neutral-300">Team A vs Team B</p>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-auto text-center">
-        <p>© 2026 Fantasy Lab. Built with Next.js</p>
+      {/* FOOTER */}
+      <footer className="bg-black border-t border-neutral-800 text-neutral-500 py-10 text-center mt-auto">
+        <p>© 2026 Fantasy Lab — Built with Next.js</p>
       </footer>
     </main>
   );

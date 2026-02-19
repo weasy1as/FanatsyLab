@@ -14,3 +14,8 @@ export async function getPlayerSummary(id: number) {
   });
   return res.json();
 }
+
+// lib/getTeamBadge.ts
+export function getTeamBadge(code: number | string) {
+  return `https://resources.premierleague.com/premierleague25/badges-alt/${code}.svg`;
+}
