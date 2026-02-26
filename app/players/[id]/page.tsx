@@ -1,3 +1,4 @@
+import { PlayerCard } from "@/components/PlayerCard";
 import { getBootstrap, getPlayerSummary } from "@/lib/fpl";
 import React from "react";
 
@@ -16,5 +17,9 @@ export default async function PlayerPage({
     return <div>Player not found</div>;
   }
 
-  return <div>{player.web_name}</div>;
+  return (
+    <div className="h-screen p-8 bg-gradient-to-b from-slate-900 via-neutral-900 to-black">
+      <PlayerCard player={player} />
+    </div>
+  );
 }

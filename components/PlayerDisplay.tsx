@@ -2,6 +2,7 @@
 import React from "react";
 import PlayerImage from "./PlayerImage";
 import { redirect } from "next/navigation";
+import { getPlayerImg } from "@/lib/fpl";
 type PlayerDisplayProps = {
   players: any[];
 };
@@ -15,11 +16,6 @@ const PlayerDisplay = ({ players }: PlayerDisplayProps) => {
     4: "Forward",
   };
 
-  const getPlayerImg = (photo: string) =>
-    `https://resources.premierleague.com/premierleague25/photos/players/110x140/${photo.replace(
-      ".jpg",
-      "",
-    )}.png`;
   return (
     <div>
       <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-6">

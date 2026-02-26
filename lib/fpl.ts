@@ -19,3 +19,9 @@ export async function getPlayerSummary(id: number) {
 export function getTeamBadge(code: number | string) {
   return `https://resources.premierleague.com/premierleague25/badges-alt/${code}.svg`;
 }
+
+export const getPlayerImg = (photo: string) =>
+  `https://resources.premierleague.com/premierleague25/photos/players/110x140/${photo.replace(
+    ".jpg",
+    "",
+  )}.png`;
