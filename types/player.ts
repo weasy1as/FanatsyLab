@@ -1,0 +1,20 @@
+export type Player = {
+  id: number;
+  web_name: string;
+  first_name: string;
+  second_name: string;
+  photo: string;
+  element_type: number;
+  now_cost: number;
+  total_points: number;
+  points_per_game: string;
+  form: string;
+  minutes: number;
+  clean_sheets: number;
+  goals_scored: number;
+  assists: number;
+  bonus: number;
+  bps: number;
+  selected_by_percent: string;
+  status: string;
+};
