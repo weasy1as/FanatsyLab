@@ -5,9 +5,11 @@ import { redirect } from "next/navigation";
 import { getPlayerImg } from "@/lib/fpl";
 type PlayerDisplayProps = {
   players: any[];
+  topscore?: boolean;
+  assist?: boolean;
 };
 
-const PlayerDisplay = ({ players }: PlayerDisplayProps) => {
+const PlayerDisplay = ({ players, topscore, assist }: PlayerDisplayProps) => {
   // Position mapping
   const positions: Record<number, string> = {
     1: "Goalkeeper",
@@ -36,7 +38,13 @@ const PlayerDisplay = ({ players }: PlayerDisplayProps) => {
               </p>
               <p className="text-sm ">£{p.now_cost / 10}m</p>
               <p className="text-sm ">Points: {p.total_points}</p>
-              <p className="text-sm ">Form: {p.form}</p>
+              {topscore ? (
+                <p className="text-xl font-bold">Goals: {p.goals_scored}</p>
+              ) : assist ? (
+                <p className="text-xl font-bold">Assists: {p.assists}</p>
+              ) : (
+                <p className="text-sm">Form: {p.form}</p>
+              )}
             </div>
           </div>
         ))}
