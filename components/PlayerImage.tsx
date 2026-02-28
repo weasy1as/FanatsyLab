@@ -13,8 +13,8 @@ type PlayerImageProps = {
 export default function PlayerImage({
   src,
   alt,
-  width = 80,
-  height = 90,
+  width = 180,
+  height = 190,
 }: PlayerImageProps) {
   const [imgError, setImgError] = useState(false);
 
