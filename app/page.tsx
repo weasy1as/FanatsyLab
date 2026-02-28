@@ -42,7 +42,11 @@ export default function LandingPage() {
           </p>
 
           <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
-            <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:scale-105 transition-transform shadow-lg">
+            <button
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold hover:scale-105 transition-
+    t   ransform shadow
+  -     lg"
+            >
               Explore Players
             </button>
 

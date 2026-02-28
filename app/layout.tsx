@@ -26,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-900`}
       >
+        {/* navbar sits on every page; dark body prevents flash of white when header is transparent */}
         <LandingNavBar />
         {children}
       </body>

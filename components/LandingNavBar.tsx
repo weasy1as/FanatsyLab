@@ -32,11 +32,6 @@ export default function LandingNavBar() {
 
         {/* Nav Links */}
         <NavItems items={navLinks} />
-
-        {/* Optional button on desktop */}
-        <NavbarButton href="/signup" variant="gradient">
-          Get Started
-        </NavbarButton>
       </NavBody>
 
       {/* Mobile Navbar */}
@@ -51,21 +46,12 @@ export default function LandingNavBar() {
             <a
               href={item.link}
               key={idx}
-              className="w-full px-4 py-2 text-black dark:text-white rounded-md hover:bg-gray-200 dark:hover:bg-neutral-800"
+              className="w-full px-4 py-2 text-white rounded-md hover:bg-neutral-800/50"
               onClick={() => setIsOpen(false)}
             >
               {item.name}
             </a>
           ))}
-
-          {/* Mobile button */}
-          <NavbarButton
-            href="/signup"
-            variant="gradient"
-            className="mt-4 w-full text-center"
-          >
-            Get Started
-          </NavbarButton>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>

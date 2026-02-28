@@ -1,7 +1,7 @@
-import React from "react";
+import { getBootstrap } from "@/lib/fpl";
+import { ComparePage } from "@/components/ComparePage";
 
-const comparePage = () => {
-  return <div>hello</div>;
-};
-
-export default comparePage;
+export default async function CompareRoute() {
+  const data = await getBootstrap();
+  return <ComparePage players={data.elements} />;
+}
