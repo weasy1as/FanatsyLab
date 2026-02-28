@@ -11,8 +11,6 @@ import TopAssists from "@/components/TopAssists";
 export default function LandingPage() {
   return (
     <main className="flex flex-col min-h-screen bg-gradient-to-b from-slate-900 via-neutral-900 to-black text-white overflow-x-hidden">
-      <LandingNavBar />
-
       {/* HERO */}
       <section className="relative flex flex-col lg:flex-row items-center justify-between mt-20 px-6 lg:px-20 gap-12">
         {/* Image */}
@@ -20,7 +18,7 @@ export default function LandingPage() {
           <Image
             src={heroPlayers}
             alt="Fantasy football players"
-            className="object-cover w-full h-96 lg:h-[520px]"
+            className="object-cover w-full h-96 hidden md:block lg:h-130"
             priority
           />
 

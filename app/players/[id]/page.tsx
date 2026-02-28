@@ -1,6 +1,6 @@
 import { PlayerCard } from "@/components/PlayerCard";
-import { getBootstrap, getPlayerSummary } from "@/lib/fpl";
-import React from "react";
+import PlayerFixtures from "@/components/PlayerFixtures";
+import { getBootstrap } from "@/lib/fpl";
 
 export default async function PlayerPage({
   params,
@@ -11,15 +11,17 @@ export default async function PlayerPage({
   const { id } = await params;
 
   const player = data.elements.find((p: any) => p.bps === Number(id));
-  console.log(player);
 
   if (!player) {
     return <div>Player not found</div>;
   }
 
   return (
-    <div className="h-screen p-8 bg-gradient-to-b from-slate-900 via-neutral-900 to-black">
-      <PlayerCard player={player} />
+    <div className="min-h-screen p-8 bg-gradient-to-b from-slate-900 via-neutral-900 to-black">
+      <div className="flex flex-col lg:flex-row items-start justify-center gap-6 max-w-3xl mx-auto">
+        <PlayerCard player={player} />
+        <PlayerFixtures teamId={player.team} />
+      </div>
     </div>
   );
 }

@@ -18,14 +18,13 @@ export default function LandingNavBar() {
 
   const navLinks = [
     { name: "Home", link: "/" },
-    { name: "Players", link: "/players" },
     { name: "Teams", link: "/teams" },
     { name: "Fixtures", link: "/fixtures" },
     { name: "Compare", link: "/compare" },
   ];
 
   return (
-    <Navbar className="sticky top-0 z-50">
+    <Navbar className="sticky top-0 z-50 ">
       {/* Desktop / Main Navbar */}
       <NavBody>
         {/* Logo */}
